@@ -55,7 +55,8 @@ public class RedesController {
                 String linha = buffer.readLine();
                 // tratamento de dados:
                 while (linha != null){
-                    System.out.println(linha);
+                    if (linha.contains("inet"))
+                        System.out.println(linha);
                     linha = buffer.readLine();
                 }
                 // fechamento:
