@@ -4,5 +4,6 @@ public class Main {
     public static void main(String[] args) {
         RedesController met = new RedesController();
         met.chamadaIp();
+        met.bigTesteIP();
     }
 }
