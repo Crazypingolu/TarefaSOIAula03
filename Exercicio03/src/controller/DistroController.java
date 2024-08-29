@@ -13,7 +13,7 @@ public class DistroController {
         return os;
     }
     // Procedimento para ver a versão:
-    public void chamadaIp(){
+    public void tipoLinux(){
         // Sistema é Windows
         if (os().contains("Linux")){
             try{ // tenta executar o comando de ver o IP
@@ -39,6 +39,9 @@ public class DistroController {
             } catch (Exception e){ // não conseguiu
                 System.err.println(e.getMessage());
             }
+        } else {
+            System.out.println(" ");
+            System.out.println("O SO (Sistema operacional) instalado não é Linux.");
         }
     }
 }
