@@ -84,4 +84,30 @@ public class KillController {
             }
         }
     }
+    // mata nome:
+    public void mataNome (String nome){
+        StringBuffer buffer = new StringBuffer();
+        if (os().contains("Windows")) {
+            buffer.append("TASKKILL /IM ");
+            buffer.append(nome);
+            String kill = buffer.toString();
+            try {
+                Runtime.getRuntime().exec(kill);
+                // ler os processos:
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        if (os().contains("Linux")) {
+            buffer.append("pkill -f ");
+            buffer.append(nome);
+            String kill = buffer.toString();
+            try {
+                Runtime.getRuntime().exec(kill);
+                // ler os processos:
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
 }

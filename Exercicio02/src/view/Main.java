@@ -7,5 +7,6 @@ public class Main {
         KillController met = new KillController();
         // met.processos();
         // met.mataPID(valor);
+        met.mataNome("notepad.exe");
     }
 }
