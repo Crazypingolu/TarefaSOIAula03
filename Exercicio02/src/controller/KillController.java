@@ -58,4 +58,30 @@ public class KillController {
             }
         }
     }
+    // Mata Pid:
+    public void mataPID (int PiD){
+        StringBuffer buffer = new StringBuffer();
+        if (os().contains("Windows")) {
+            buffer.append("TASKKILL /PID ");
+            buffer.append(PiD);
+            String kill = buffer.toString();
+            try {
+                Runtime.getRuntime().exec(kill);
+                // ler os processos:
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        if (os().contains("Linux")) {
+            buffer.append("kill -9 ");
+            buffer.append(PiD);
+            String kill = buffer.toString();
+            try {
+                Runtime.getRuntime().exec(kill);
+                // ler os processos:
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
 }
